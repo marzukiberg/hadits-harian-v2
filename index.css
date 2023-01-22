@@ -1,0 +1,26 @@
+.font-qs {
+  font-family: 'Quicksand', sans-serif;
+}
+
+#downloadable {
+  width: calc(1080px / 2);
+  height: calc(1920px / 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#downloadable .content-downloadable {
+  min-height: 70%;
+}
+#downloadable .content-inner {
+  height: 100%;
+}
+
+#downloadable .top-frame,
+#downloadable .bottom-frame {
+  background: url(assets/img/border.png);
+  background-size: cover;
+}
+#downloadable .bottom-frame {
+  transform: scaleY(-100%);
+}

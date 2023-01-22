@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Primary Meta Tags -->
+    <title>
+      Hadits Harian - Dapatkan Notifikasi Hadits Harian Langsung dari HP Anda
+    </title>
+    <meta
+      name="title"
+      content="Hadits Harian - Dapatkan Notifikasi Hadits Harian Langsung dari HP Anda"
+    />
+    <meta
+      name="description"
+      content="Hadits Harian memungkinkan Anda untuk mendapatkan Notifikasi Hadits dalam rentang waktu beberapa jam sekali (sesuai keinginan Anda)"
+    />
+    <link href="./assets/css/font-quicksand.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="./index.css" />
+
+    <script src="./assets/js/html2canvas.min.js"></script>
+    <script src="./assets/js/tailwind.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <div
+        class="container relative mx-auto max-w-xl min-h-screen border shadow bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500"
+      >
+        <!-- frame -->
+        <div class="absolute inset-0 w-full h-full z-1">
+          <img
+            src="./assets/img/border.png"
+            alt="Border"
+            class="brightness-0 invert p-1 drop-shadow-xl box-border w-full h-screen object-cover object-top"
+          />
+        </div>
+
+        <div
+          class="header p-3 mt-24 mb-8 text-center text-white drop-shadow-xl"
+        >
+          <h1 class="text-3xl font-bold font-qs">Hadits Harian V2</h1>
+          <p class="w-3/4 mx-auto font-qs">
+            Terima Notifikasi Hadits Harian secara Acak dengan rentang waktu
+            sesuai keinginan Anda
+          </p>
+        </div>
+
+        <div
+          class="content p-8 mx-8 mb-5 rounded-xl drop-shadow-xl bg-white hover:shadow-xl duration-300"
+        >
+          <div class="content-header p-3 border-b relative">
+            <div class="absolute left-0 w-full flex justify-between -top-3">
+              <button
+                class="rounded-full bg-blue-300 w-12 h-12"
+                id="notify-me-toggler"
+                title="Notify Me"
+              >
+                <i
+                  class="fas fa-bell text-xl text-gray-700 hover:text-black duration-300 pointer-events-none"
+                ></i>
+              </button>
+              <button
+                class="rounded-full bg-blue-300 w-12 h-12"
+                id="save-as-image"
+                title="Save As Image"
+              >
+                <i
+                  class="fas fa-share text-xl text-gray-700 hover:text-black duration-300 pointer-events-none"
+                ></i>
+              </button>
+
+              <div
+                id="notify-me"
+                class="absolute w-72 rounded-xl z-1 bg-blue-300 left-0 top-14 shadow-xl font-qs p-3 scale-0 transform origin-top-left duration-300"
+              >
+                <h4 class="text-center bg-white p-2 rounded-xl mb-3">
+                  Buat Notifikasi
+                </h4>
+
+                <div class="input-form relative bg-white rounded-xl mb-3">
+                  <div class="absolute top-1 left-2">
+                    <i class="fas fa-clock text-3xl text-gray-700"></i>
+                  </div>
+                  <select
+                    name="schedule"
+                    id="schedule"
+                    class="w-full p-3 rounded-xl pl-12 font-bold"
+                  >
+                    <option value="1">1 Jam</option>
+                  </select>
+                </div>
+
+                <button
+                  class="p-3 block bg-white rounded-xl ml-auto"
+                  id="make-notif"
+                >
+                  Buat Notifikasi!
+                </button>
+              </div>
+            </div>
+            <h2 class="text-center text-xl font-qs font-bold">
+              Hadits Hari Ini
+            </h2>
+          </div>
+          <div class="content-body p-3">
+            <div
+              id="spinner"
+              class="w-full h-32 flex items-center justify-center"
+            >
+              <div
+                class="spinner w-14 h-14 rounded-full border-4 border-gray-100 border-b-blue-400 animate-spin"
+              ></div>
+            </div>
+
+            <p
+              class="arabic text-3xl text-right leading-relaxed mb-5 content-arab"
+              id="content-arab"
+            ></p>
+            <p class="text-justify font-qs content-id" id="content-id"></p>
+
+            <div id="error-404" class="hidden">
+              <div class="error-404 text-center">
+                <img
+                  src="./assets/img/undraw-not-found.svg"
+                  alt="Not Found"
+                  class="mx-auto w-44 h-44 mb-3"
+                />
+                <h4 class="text-center text-xl font-bold font-qs">
+                  Ups, terjadi kesalahan
+                </h4>
+                <p class="font-qs text-md text-center mb-3">
+                  Silahkan muat ulang halaman sobat, semoga saja halamannya
+                  tidak error lagi ya! :)
+                </p>
+                <button
+                  onclick="window.location.reload()"
+                  class="px-3 py-2 rounded-xl bg-blue-300 text-gray-900 font-bold mx-auto font-qs"
+                >
+                  Muat Ulang
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="downloadable"
+          class="card-download absolute -top-[200%] bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500 py-6"
+        >
+          <div
+            class="content-downloadable p-3 mx-8 mb-5 flex flex-col justify-between rounded-xl drop-shadow-xl bg-white hover:shadow-xl duration-300"
+          >
+            <div class="w-full h-32 top-frame"></div>
+            <div class="content-inner -my-24 mx-14">
+              <div class="content-header">
+                <h2 class="text-center text-xl font-qs font-bold">
+                  Hadits Hari Ini
+                </h2>
+              </div>
+              <div class="content-body p-3">
+                <p
+                  class="arabic text-3xl text-right leading-relaxed mb-5 content-arab"
+                ></p>
+                <p class="text-justify font-qs content-id"></p>
+              </div>
+
+              <div class="content-footer font-qs mt-14">
+                <div class="text-center">Made with &#10084; by @ukay.fs</div>
+              </div>
+            </div>
+            <div class="w-full h-32 bottom-frame"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
