@@ -3,8 +3,7 @@
 }
 
 #downloadable {
-  width: calc(1080px / 2);
-  height: calc(1920px / 2);
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;

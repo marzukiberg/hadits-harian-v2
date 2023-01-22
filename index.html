@@ -26,7 +26,7 @@
   <body>
     <main>
       <div
-        class="container relative mx-auto max-w-xl min-h-screen border shadow bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500"
+        class="container relative mx-auto w-full min-h-screen border shadow bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500"
       >
         <!-- frame -->
         <div class="absolute inset-0 w-full h-full z-1">
@@ -38,7 +38,7 @@
         </div>
 
         <div
-          class="header p-3 mt-24 mb-8 text-center text-white drop-shadow-xl"
+          class="header p-3 mt-14 mb-8 text-center text-white drop-shadow-xl"
         >
           <h1 class="text-3xl font-bold font-qs">Hadits Harian V2</h1>
           <p class="w-3/4 mx-auto font-qs">
@@ -50,24 +50,24 @@
         <div
           class="content p-8 mx-8 mb-5 rounded-xl drop-shadow-xl bg-white hover:shadow-xl duration-300"
         >
-          <div class="content-header p-3 border-b relative">
+          <div class="content-header p-2 border-b relative">
             <div class="absolute left-0 w-full flex justify-between -top-3">
               <button
-                class="rounded-full bg-blue-300 w-12 h-12"
+                class="rounded-full bg-blue-300 w-10 h-10"
                 id="notify-me-toggler"
                 title="Notify Me"
               >
                 <i
-                  class="fas fa-bell text-xl text-gray-700 hover:text-black duration-300 pointer-events-none"
+                  class="fas fa-bell text-md text-gray-700 hover:text-black duration-300 pointer-events-none"
                 ></i>
               </button>
               <button
-                class="rounded-full bg-blue-300 w-12 h-12"
+                class="rounded-full bg-blue-300 w-10 h-10"
                 id="save-as-image"
                 title="Save As Image"
               >
                 <i
-                  class="fas fa-share text-xl text-gray-700 hover:text-black duration-300 pointer-events-none"
+                  class="fas fa-share text-md text-gray-700 hover:text-black duration-300 pointer-events-none"
                 ></i>
               </button>
 
@@ -115,10 +115,13 @@
             </div>
 
             <p
-              class="arabic text-3xl text-right leading-relaxed mb-5 content-arab"
+              class="arabic text-xl text-right leading-relaxed mb-5 content-arab"
               id="content-arab"
             ></p>
-            <p class="text-justify font-qs content-id" id="content-id"></p>
+            <p
+              class="text-justify font-qs content-id text-sm"
+              id="content-id"
+            ></p>
 
             <div id="error-404" class="hidden">
               <div class="error-404 text-center">
@@ -147,26 +150,30 @@
 
         <div
           id="downloadable"
-          class="card-download absolute -top-[200%] bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500 py-6"
+          class="card-download absolute -top-[300%] bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500 py-6"
         >
           <div
             class="content-downloadable p-3 mx-8 mb-5 flex flex-col justify-between rounded-xl drop-shadow-xl bg-white hover:shadow-xl duration-300"
           >
             <div class="w-full h-32 top-frame"></div>
-            <div class="content-inner -my-24 mx-14">
+            <div class="content-inner -my-24 mx-4">
               <div class="content-header">
-                <h2 class="text-center text-xl font-qs font-bold">
+                <h2 class="text-center text-lg font-qs font-bold">
                   Hadits Hari Ini
                 </h2>
               </div>
               <div class="content-body p-3">
                 <p
-                  class="arabic text-3xl text-right leading-relaxed mb-5 content-arab"
+                  class="arabic text-md text-right leading-relaxed mb-5 content-arab"
+                  id="content-arab"
                 ></p>
-                <p class="text-justify font-qs content-id"></p>
+                <p
+                  class="text-justify font-qs content-id text-xs"
+                  id="content-id"
+                ></p>
               </div>
 
-              <div class="content-footer font-qs mt-14">
+              <div class="content-footer text-sm font-qs mt-14">
                 <div class="text-center">Made with &#10084; by @ukay.fs</div>
               </div>
             </div>
